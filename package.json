@@ -1,0 +1,47 @@
+{
+  "name": "dicodev-forum",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Aplikasi web Forum Diskusi untuk submission kelas Menjadi React Web Developer Expert dari Dicoding",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmdhndr/dicodev-forum.git"
+  },
+  "keywords": [
+    "Express",
+    "Typescript"
+  ],
+  "author": "ahmdhndr <ahmdhndrsyh@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmdhndr/dicodev-forum/issues"
+  },
+  "homepage": "https://github.com/ahmdhndr/dicodev-forum#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^3.1.5",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.9"
+  }
+}
