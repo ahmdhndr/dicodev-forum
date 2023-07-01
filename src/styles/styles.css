@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-clr: #22a39f;
+  --secondary-clr: #f3efe0;
+  --black-clr: #222222;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--secondary-clr);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-clr);
+}
+
+.truncate,
+.truncate > div {
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+}
+
+.truncate > div:not(:first-child) {
+  display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--primary-clr);
+  border: 3px solid var(--secondary-clr);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: var(--secondary-clr);
+}
+
+/* MUI overrides */
+.MuiMenu-list {
+  background: var(--secondary-clr);
+}
