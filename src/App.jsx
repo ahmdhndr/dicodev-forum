@@ -63,11 +63,7 @@ function App() {
           <Route
             path={ADD_NEW_THREAD_PATH}
             element={
-              <AddThreadPage
-                authUser={authUser}
-                addThread={onAddThreadHandler}
-                alert={alert}
-              />
+              <AddThreadPage authUser={authUser} addThread={onAddThreadHandler} alert={alert} />
             }
           />
           <Route path={LEADERBOARD_PATH} element={<LeaderboardPage />} />
@@ -89,7 +85,7 @@ function App() {
           />
           <Route path={NOT_FOUND_PATH} element={<NotFoundPage />} />
         </Routes>
-        <AlertPopup showAlert={alert} />
+        <AlertPopup alert={alert} />
       </Container>
     </>
   );

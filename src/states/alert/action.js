@@ -5,10 +5,9 @@ const AlertTypes = {
 
 const ActionType = {
   SHOW_ALERT: 'SHOW_ALERT',
-  CLOSE_ALERT: 'SHOW_ALERT',
 };
 
-function showSuccessAlert(message) {
+function showSuccessAlert(message = '') {
   return {
     type: ActionType.SHOW_ALERT,
     payload: {

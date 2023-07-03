@@ -3,12 +3,12 @@ import { Alert, Fade, IconButton, Snackbar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { PropTypes, alertShape } from '../utils/globalPropTypes';
 
-function AlertPopup({ showAlert }) {
+function AlertPopup({ alert }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (showAlert !== null) setOpen(true);
-  }, [showAlert]);
+    if (alert !== null) setOpen(true);
+  }, [alert]);
 
   const handleClose = () => {
     setOpen(false);
@@ -24,21 +24,16 @@ function AlertPopup({ showAlert }) {
       <Fade in={open}>
         <Alert
           action={
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={handleClose}
-            >
+            <IconButton aria-label="close" color="inherit" size="small" onClick={handleClose}>
               <CloseIcon fontSize="inherit" />
             </IconButton>
           }
           elevation={6}
           variant="filled"
           onClose={handleClose}
-          severity={showAlert?.type}
+          severity={alert?.type}
         >
-          {showAlert?.message}
+          {alert?.message}
         </Alert>
       </Fade>
     </Snackbar>
@@ -46,11 +41,11 @@ function AlertPopup({ showAlert }) {
 }
 
 AlertPopup.propTypes = {
-  showAlert: PropTypes.shape(alertShape),
+  alert: PropTypes.shape(alertShape),
 };
 
 AlertPopup.defaultProps = {
-  showAlert: null,
+  alert: null,
 };
 
 export default AlertPopup;

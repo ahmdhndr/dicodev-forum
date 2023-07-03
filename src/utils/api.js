@@ -152,16 +152,13 @@ const api = (() => {
   }
 
   async function createComment({ threadId, content }) {
-    const response = await _fetchWithAuth(
-      `${BASE_URL}/threads/${threadId}/comments`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ content }),
+    const response = await _fetchWithAuth(`${BASE_URL}/threads/${threadId}/comments`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    );
+      body: JSON.stringify({ content }),
+    });
 
     const responseJson = await response.json();
     const { status, message } = responseJson;
@@ -177,12 +174,9 @@ const api = (() => {
   }
 
   async function voteThread({ threadId, url }) {
-    const response = await _fetchWithAuth(
-      `${BASE_URL}/threads/${threadId}/${url}`,
-      {
-        method: 'POST',
-      },
-    );
+    const response = await _fetchWithAuth(`${BASE_URL}/threads/${threadId}/${url}`, {
+      method: 'POST',
+    });
 
     const responseJson = await response.json();
     const { status, message } = responseJson;

@@ -2,7 +2,7 @@ import { Box, Container, Divider, Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import LeaderboardsList from '../components/LeaderboardsList';
-import { asyncPopulateLeaderboards } from '../states/leaderboards/action';
+import { asyncReceiveLeaderboards } from '../states/leaderboards/action';
 
 function LeaderboardPage() {
   const leaderboards = useSelector((state) => state.leaderboards);
@@ -10,7 +10,7 @@ function LeaderboardPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(asyncPopulateLeaderboards());
+    dispatch(asyncReceiveLeaderboards());
   }, [dispatch]);
 
   return (

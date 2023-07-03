@@ -246,6 +246,7 @@ export {
   asyncReceiveDetailThread,
   asyncUpVoteComment,
   asyncUpVoteDetailThread,
+  clearDetailThreadActionCreator,
   downVoteCommentActionCreator,
   downVoteDetailThreadActionCreator,
   neutralVoteCommentActionCreator,

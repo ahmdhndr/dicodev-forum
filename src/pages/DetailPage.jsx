@@ -1,12 +1,13 @@
 import { Container } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import DetailThread from '../components/DetailThread';
 import SectionComment from '../components/SectionComment';
 import { asyncAddComment, asyncReceiveDetailThread } from '../states/detailThread/action';
 
 function DetailPage() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const authUser = useSelector((state) => state.authUser);
   const detailThread = useSelector((state) => state.detailThread);
@@ -15,7 +16,10 @@ function DetailPage() {
 
   useEffect(() => {
     dispatch(asyncReceiveDetailThread(id));
-  }, [id, dispatch]);
+    if (!id) {
+      navigate('/');
+    }
+  }, [id, dispatch, navigate]);
 
   if (!detailThread) {
     return null;
