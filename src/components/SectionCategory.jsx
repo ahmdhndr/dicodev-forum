@@ -16,7 +16,7 @@ function SectionCategory({ children }) {
     >
       <Box paddingLeft={{ lg: 2 }}>
         <Typography variant="h5" marginTop={3} marginBottom={0.5}>
-          Kategori
+          Kategori Utas
         </Typography>
         <Divider sx={{ marginBottom: 3 }} />
         {children}
