@@ -41,7 +41,7 @@ function AddThreadForm({ addThreadFn }) {
         id="title"
         fullWidth
         variant="outlined"
-        label="Judul"
+        label="Title"
         value={title}
         onChange={handleTitleChange}
       />
