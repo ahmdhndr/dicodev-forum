@@ -47,6 +47,10 @@ a {
   background-color: var(--secondary-clr);
 }
 
+.storybook {
+  position: relative;
+}
+
 /* MUI overrides */
 .MuiMenu-list {
   background: var(--secondary-clr);

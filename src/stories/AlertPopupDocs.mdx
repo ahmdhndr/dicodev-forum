@@ -1,0 +1,26 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks';
+import * as AlertPopupStories from './AlertPopup.stories';
+
+<Meta of={AlertPopupStories} />
+
+# AlertPopup
+
+An AlertPopup is a component that triggered when a button is clicked. The alert will automatically hide after certain time (default is 3000ms)
+
+<Controls />
+
+## Success Alert
+
+<Canvas of={AlertPopupStories.WithTypeSuccess} />
+
+## Error Alert
+
+<Canvas of={AlertPopupStories.WithTypeError} />
+
+## Warning Alert
+
+<Canvas of={AlertPopupStories.WithTypeWarning} />
+
+## Info Alert
+
+<Canvas of={AlertPopupStories.WithTypeInfo} />

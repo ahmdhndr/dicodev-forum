@@ -1,9 +1,8 @@
-import { Close as CloseIcon } from '@mui/icons-material';
-import { Alert, Fade, IconButton, Snackbar } from '@mui/material';
+import { Alert, Fade, Snackbar } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { PropTypes, alertShape } from '../utils/globalPropTypes';
 
-function AlertPopup({ alert }) {
+function AlertPopup({ alert, customStyleAndPreventAutoHide }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -18,21 +17,16 @@ function AlertPopup({ alert }) {
     <Snackbar
       anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       open={open}
-      autoHideDuration={3000}
+      autoHideDuration={customStyleAndPreventAutoHide ? null : 3000}
       onClose={handleClose}
+      style={
+        customStyleAndPreventAutoHide
+          ? { position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }
+          : {}
+      }
     >
       <Fade in={open}>
-        <Alert
-          action={
-            <IconButton aria-label="close" color="inherit" size="small" onClick={handleClose}>
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
-          }
-          elevation={6}
-          variant="filled"
-          onClose={handleClose}
-          severity={alert?.type}
-        >
+        <Alert elevation={6} variant="filled" severity={alert?.type}>
           {alert?.message}
         </Alert>
       </Fade>
@@ -42,10 +36,12 @@ function AlertPopup({ alert }) {
 
 AlertPopup.propTypes = {
   alert: PropTypes.shape(alertShape),
+  customStyleAndPreventAutoHide: PropTypes.bool,
 };
 
 AlertPopup.defaultProps = {
   alert: null,
+  customStyleAndPreventAutoHide: false,
 };
 
 export default AlertPopup;
